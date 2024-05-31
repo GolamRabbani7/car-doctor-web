@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.postimg.cc/fWgXKpSx/1.png",
+      "title": "Tha disk of genarat ",
+      "price": 19.99
+    },
+    {
+      "id": 2,
+      "img": "https://i.postimg.cc/rF14kmY9/2.png",
+      "title": "Hydrolick Meshing",
+      "price": 29.99
+    },
+    {
+      "id": 3,
+      "img": "https://i.postimg.cc/wjFs1rzy/3.png",
+      "title": "Powderfull Ring",
+      "price": 39.99
+    },
+    {
+      "id": 4,
+      "img": "https://i.postimg.cc/RCf67h9z/4.png",
+      "title": "Lituem Bettry",
+      "price": 49.99
+    },
+    {
+      "id": 5,
+      "img": "https://i.postimg.cc/CLsR22zP/5.png",
+      "title": "The Wheell ",
+      "price": 59.99
+    },
+    {
+      "id": 6,
+      "img": "https://i.postimg.cc/qvmzJCc2/6.png",
+      "title": "Founding Parts",
+      "price": 69.99
+    }
+    
+  ]
+  
