@@ -16,27 +16,27 @@ const ChooseUs = () => {
 
 
             <div className='grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2'>
-                <div className='px-12 py-10  hover:bg-red-400 rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 ' src={team} alt="team" />
                     <p className='font-medium ml-3 '>Expert Team</p>
                 </div>
-                <div className='px-12 py-10  hover:bg-red-400 rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 ' src={check} alt="team" />
                     <p className='font-medium '>100% Guranty</p>
                 </div>
-                <div className='px-12 py-10 hover:bg-red-400  rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 text-red-600 rounded-full bg-red-400' src={clock} alt="team" />
                     <p className='font-medium '>Timely {` Clock's`}</p>
                 </div>
-                <div className='px-12 py-10  hover:bg-red-400 rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 ' src={support} alt="team" />
                     <p className='font-medium '>24/7 Support</p>
                 </div>
-                <div className='px-12 py-10  hover:bg-red-400 rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 ' src={Equipment} alt="team" />
                     <p className='font-medium '>Best Equipment</p>
                 </div>
-                <div className='px-12 py-10  hover:bg-red-400 rounded-xl hover:scale-95 transform transition-transform duration-500 hover:text-white  '>
+                <div className='px-12 py-10   rounded-xl hover:scale-95 transform transition-transform duration-500 '>
                     <img className='mx-5 ' src={deliveryt} alt="team" />
                     <p className='font-medium '>Timely Delivery</p>
                 </div>
