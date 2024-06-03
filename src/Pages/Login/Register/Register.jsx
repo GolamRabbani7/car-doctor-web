@@ -1,66 +1,53 @@
-
-import img from '../../../assets/images/login/login.svg'
-import facebook from '../../../assets/icons/button/facebook.svg'
-import Google from '../../../assets/icons/button/google.svg'
-import Linkdin from '../../../assets/icons/button/linkedin.svg'
+import img from '../../../../assets/images/login/login.svg'
+import facebook from '../../../../assets/icons/button/facebook.svg'
+import Google from '../../../../assets/icons/button/google.svg'
+import Linkdin from '../../../../assets/icons/button/linkedin.svg'
 //-----------------------
-
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { ContextProvider } from '../../AuthContext/AuthContext';
+import { ContextProvider } from '../../../AuthContext/AuthContext';
 import Swal from 'sweetalert2';
 
 
-const Login = () => {
-    const { LoinUser } = useContext(ContextProvider);
 
+const Register = () => {
 
-    const location = useLocation();
-    const navigate = useNavigate();
-    console.log(location)
+const {RegisterUser}=useContext(ContextProvider)
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(name,email, password)
 
+        RegisterUser(email,password)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            console.log(user)
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "User created succe",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode,errorMessage)
+            // ..
+          });
 
-        LoinUser(email, password)
-            .then((userCredential) => {
-                // Signed up 
-                const user = userCredential.user;
-                navigate(location?.state ? location.state : '/')
-
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Login Successfully",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // ...
-
-            })
-            .catch((error) => {
-                Swal.fire({
-                    position: "center",
-                    icon: "error",
-                    title: "Don't currect or password",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
-                // ..
-            });
     }
+    
 
 
     return (
@@ -68,10 +55,16 @@ const Login = () => {
             <div className="hero-content flex-col md:flex-row">
                 <img className='w-1/2' src={img} alt="" />
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <h1 className="text-3xl text-center font-bold">Login now</h1>
+                    <h1 className="text-3xl text-center font-bold">Register now</h1>
 
 
                     <form className="card-body" onSubmit={handleSubmit}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -89,7 +82,7 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <input className="btn btn-error" type="submit" value="Login " />
+                            <input className="btn btn-error" type="submit" value="Register " />
                         </div>
                     </form>
                     <div className='text-center '>
@@ -99,7 +92,7 @@ const Login = () => {
                             <Button className='btn  btn-info btn-outline  mx-4'><img src={Google} alt="" /></Button>
                             <Button className='btn  btn-info btn-outline'><img src={Linkdin} alt="" /></Button>
                         </ButtonGroup>
-                        <p className='my-5'>If don't have acount <Link className='text-blue-600' to='/register'>Register</Link></p>
+                        <p className='my-5'> Already have An acount ? <Link className='text-blue-600' to='/login'>Login</Link></p>
                     </div>
 
 
@@ -112,4 +105,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

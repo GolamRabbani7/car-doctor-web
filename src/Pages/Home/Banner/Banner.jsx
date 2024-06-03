@@ -12,7 +12,7 @@ const Banner = () => {
         const interval = setInterval(() => {
             // Increment current slide number cyclically
             setCurrentSlide((prevSlide) => (prevSlide % 4) + 1);
-        }, 5000); // Change slide every 5 seconds
+        }, 3000); // Change slide every 5 seconds
 
         return () => clearInterval(interval); // Cleanup the interval on unmount
     }, []); // Run only once on component mount
